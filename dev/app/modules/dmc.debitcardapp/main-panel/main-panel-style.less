@@ -1,0 +1,103 @@
+@import (reference) '../../dmc.app/variables/index.less';
+
+.dmc-main-panel {
+
+  &__panel {
+    border-color: @color-H;
+    &__heading{
+      background-color: @color-B;
+      &__text-title{
+        color: @color-panel-head-text;
+        text-align: left !important;
+      }
+      &__text-normal{
+        color: @color-J;
+        margin-top: 12px;
+        text-align: left !important;
+      }
+      &__img-container{
+        padding: 0;
+        &__img{
+          border-top-right-radius: 6px;
+          -moz-border-radius-topright: 6px;
+          -webkit-border-top-right-radius: 6px;
+          height: 256px;
+        }
+        &__caption{
+          position: absolute;
+          bottom: -23px;
+          background-color: @color-A;
+          color: @color-J;
+          font-size: 24px;
+          -webkit-font-smoothing: antialiased;
+          -webkit-border-top-left-radius: 6px;
+          -webkit-border-bottom-left-radius: 6px;
+          -moz-border-top-left-radius: 6px;
+          -moz-border-bottom-left-radius: 6px;
+          border-bottom-left-radius: 6px;
+          border-top-left-radius: 6px;
+          right: -1px;
+          padding: 12px;
+        }
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+      margin-top: 42px;
+      margin-bottom: 0;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      &__heading{
+        border-top-left-radius: 6px !important;
+        border-top-right-radius: 6px !important;
+        -moz-border-radius-topleft: 6px !important;
+        -moz-border-radius-topright: 6px !important;
+        -webkit-border-top-left-radius: 6px !important;
+        -webkit-border-top-right-radius: 6px !important;
+        padding-right: 0 !important;
+        &__text-title{
+          margin-top: 46px;
+        }
+        &__img-container{
+          margin: -10px -11px -15px -12px;
+        }
+      }
+      &__body{
+        margin-top: 42px;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      border: 0 !important;
+      -webkit-border-radius: 0 !important;
+      -moz-border-radius: 0 !important;
+      border-radius: 0 !important;
+      margin-bottom: 0 !important;
+      &__heading{
+        padding: 12px !important;
+        border: 0 !important;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        border-radius: 0 !important;
+        &__text-title{
+          margin-top: 12px;
+          margin-bottom: 12px;
+        }
+        /*&__text-normal{
+          font-size: 18px;
+          font-weight: 300 !important;
+        }*/
+        &__img-container{
+          display: none;
+        }
+      }
+      &__body{
+        margin-left: 0;
+        margin-right: 0;
+        &__content{
+          padding: 0;
+        }
+      }
+    }
+  }
+}

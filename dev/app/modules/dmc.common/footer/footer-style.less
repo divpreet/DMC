@@ -1,0 +1,48 @@
+.dmc-footer {
+  width: 100%;
+  border-top: 1px solid #d7d2cb;
+  background-color: #fff;
+
+  &__content {
+	display: flex;
+	align-items: center;
+
+	&__padlock {
+	  display: inline-block;
+	  margin-right: 10px;
+	}
+
+	&__text {
+	  display: inline-block;
+	  font-weight: 400;
+	  font-size: 14px;
+	  width: calc(100% ~"-" 55px);
+	  &__small{
+		font-weight: 400;
+		font-size: 12px;
+	  }
+	}
+	a{
+	  text-decoration: underline;
+	}
+  }
+  @media only screen and (min-width: 768px) {
+	.show-mobile {
+	  display: none;
+	}
+  }
+  @media only screen and (max-width: 767px) {
+	&__content{
+	  &__padlock {
+		margin-top: -60px;
+	  }
+	  &__text{
+		margin: 24px 0;
+	  }
+	}
+	.hide-mobile {
+	  display: none;
+	}
+  }
+
+}

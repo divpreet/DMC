@@ -1,0 +1,20 @@
+<div class="dmc-modal">
+
+	<div class="modal js-modalbody text-left" id="{{vm.modalId}}" tabindex="-1" role="dialog" aria-labelledby="modal-header-title1" aria-describedby="modal-bodyID" aria-hidden="true">
+		<div class="modal-header">
+			<button class="modal-header-close js-modalclose icon icon-size-sm icon-cross" ng-click="vm.closeModal()">Close modal</button>
+			<span class="modal-header-title" id="modal-header-title1">{{vm.modalHeader}}</span>
+		</div>
+		<div class="modal-body" id="modal-bodyID">
+			{{vm.modalBody}}
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-faint js-modalclose" ng-click="vm.closeModal()">
+				{{vm.cancelLabel}}
+			</button>
+			<button type="button" class="btn btn-primary" ng-click="vm.confirmFlow()">{{vm.proceedLabel}}</button>
+		</div>
+	</div>
+	<div class="modal-backdrop" ng-if="vm.showModal" ng-click="vm.closeModal()"></div>
+
+</div>

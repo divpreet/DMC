@@ -1,0 +1,100 @@
+<div class="appname-idv-secondary-govtcard">
+
+	<div class="well well-responsive clearfix top-margin3-xs top-margin3-sm">
+		<h5>Must be current and issued under a Commonwealth, State or Territory law for the purpose of identification, for a government service or as a licence.</h5>
+		<div class="col-sm-9 top-margin3-sm idv-center">
+
+			<div class="form-group form-radio"
+				 ng-class="{'alert-form has-danger': (form.$submitted || form.govtCardRadio.$dirty) && form.govtCardRadio.$invalid}">
+
+				<label class="col-sm-4 text-right">Original or Certified Copy</label>
+				<div class="form-group col-sm-6 clearfix">
+					<label class="radio">
+						<input class="radio-input" type="radio" id="govtCardRadio1" name="govtCardRadio"
+							   ng-model="vm.idv.govtcard.radio" value="yes" ng-required="true">
+						<span class="radio-text">Yes—Original</span>
+					</label>
+					<label class="radio">
+						<input class="radio-input" type="radio" id="govtCardRadio2" name="govtCardRadio" value="no"
+							   ng-model="vm.idv.govtcard.radio" ng-required="true">
+						<span class="radio-text">No—Certified copy</span>
+					</label>
+					<p ng-show="(form.$submitted || form.govtCardRadio.$dirty) && form.govtCardRadio.$invalid"
+					   class="alert-form-msg">
+						<span ng-show="form.govtCardRadio.$error.required">{{vm.cmError.idvdoc.required}}</span>
+					</p>
+				</div>
+			</div>
+
+			<div class="form-group appname-idv-secondary-govtcard alert-form clearfix"
+				 ng-class="{'alert-form has-danger': (form.$submitted || form.govtIssuedBy.$touched) && form.govtIssuedBy.$invalid}">
+				<label for="govtIssuedBy" class="col-sm-4 text-right">Issued by</label>
+				<div class="col-sm-6">
+					<input type="text" class="input-field" name="govtIssuedBy" id="govtIssuedBy"
+						   ng-model="vm.idv.govtcard.issuedBy" ng-required="true" ng-pattern="/^[a-zA-Z]{1}[a-zA-Z \-,]+$/">
+					<p ng-show="(form.$submitted || form.govtIssuedBy.$touched) && form.govtIssuedBy.$invalid"
+					   class="alert-form-msg">
+						<span ng-show="form.govtIssuedBy.$error.required">{{vm.cmError.issuerCountry.required}}</span>
+					</p>
+				</div>
+
+			</div>
+
+			<div class="form-group clearfix"
+				 ng-class="{'alert-form has-danger': (form.$submitted || form.govtCardIssueDate.touched) && form.govtCardIssueDate.$invalid}">
+				<label class="col-sm-4 text-right">Issue date</label>
+				<div class="col-sm-6 no-padding-lr">
+					<appname-date-input id="11" ng-model="vm.idv.govtcard.issueDate" data-ng-required="true"
+										  data-yearsintopast="30" data-yearsintofuture="0"
+										  name="govtCardIssueDate" data-date-type="issue"></appname-date-input>
+					<p ng-show="(form.$submitted || form.govtCardIssueDate.touched) && form.govtCardIssueDate.$invalid"
+					   class="alert-form-msg left-padding-3sm">
+						<span ng-show="form.govtCardIssueDate.$error.required">{{vm.cmError.issueDate.required}}</span>
+						<span ng-show="form.govtCardIssueDate.$error.issue">{{vm.cmError.issueDate.issue}}</span>
+					</p>
+					 <div class="col-sm-12 top-margin2-xs">
+                        <div class="alert js-alert alert-info" role="alert">
+                            <div class="alert-body">
+                                Document must be issued within three months prior to today.
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+
+			<div class="form-group clearfix"
+				 ng-class="{'alert-form has-danger': (form.$submitted || form.govtCardExpiryDate.touched) && form.govtCardExpiryDate.$invalid}">
+				<label class="col-sm-4 text-right">Expiry date</label>
+				<div class="col-sm-6 no-padding-lr">
+					<appname-date-input id="12" ng-model="vm.idv.govtcard.expiryDate" data-ng-required="true"
+										  data-yearsintopast="1" data-yearsintofuture="20"
+										  name="govtCardExpiryDate" data-date-type="expiry"></appname-date-input>
+					<p ng-show="(form.$submitted || form.govtCardExpiryDate.touched) && form.govtCardExpiryDate.$invalid"
+					   class="alert-form-msg left-padding-3sm">
+						<span ng-show="form.govtCardExpiryDate.$error.required">{{vm.cmError.expiryDate.required}}</span>
+						<span ng-show="form.govtCardExpiryDate.$error.expiry">{{vm.cmError.expiryDate.expiry}}</span>
+					</p>
+				</div>
+			</div>
+
+			<div class="form-group appname-idv-secondary-govtcard alert-form clearfix"
+				 ng-class="{'alert-form has-danger': (form.$submitted || form.govtCardNumber.$touched) && form.govtCardNumber.$invalid}">
+				<label for="govtCardNumber" class="col-sm-4 text-right">Reference number</label>
+				<div class="col-sm-6">
+					<input type="text" class="input-field" name="govtCardNumber" id="govtCardNumber"
+						   ng-model="vm.idv.govtcard.number" ng-required="true" ng-pattern="/^[a-z0-9]*$/i">
+					<p ng-show="(form.$submitted || form.govtCardNumber.$touched) && form.govtCardNumber.$invalid"
+					   class="alert-form-msg">
+						<span ng-show="form.govtCardNumber.$error.required">{{vm.cmError.refNum.required}}</span>
+						<span ng-show="form.govtCardNumber.$error.pattern">{{vm.cmError.refNum.invalid}}</span>
+					</p>
+				</div>
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+</div>

@@ -1,0 +1,106 @@
+<div class="appname-idv-primary-otherpassport">
+
+    <div class="well well-responsive clearfix top-margin3-xs top-margin3-sm">
+        <h5>Current foreign passport issued by a foreign government, the United Nations or an
+            agency of the United Nations. Must not be cancelled, defaced or mutilated and must include the customer's
+            signature and photograph.</h5>
+        <div class="col-sm-9 top-margin3-sm idv-center">
+
+            <div class="form-group form-radio"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.otherPassportRadio.$dirty) && form.otherPassportRadio.$invalid}">
+
+                <label class="col-sm-4 text-right">Original or Certified Copy</label>
+                <div class="form-group col-sm-6 clearfix">
+                    <label class="radio">
+                        <input class="radio-input" type="radio" id="otherPassportRadio1" name="otherPassportRadio"
+                               ng-model="vm.idv.otherpassport.radio" value="yes" ng-required="true">
+                        <span class="radio-text">Yes—Original</span>
+                    </label>
+                    <label class="radio">
+                        <input class="radio-input" type="radio" id="otherPassportRadio2" name="otherPassportRadio"
+                               value="no"
+                               ng-model="vm.idv.otherpassport.radio" ng-required="true">
+                        <span class="radio-text">No—Certified copy</span>
+                    </label>
+                    <p ng-show="(form.$submitted || form.otherPassportRadio.$dirty) && form.otherPassportRadio.$invalid"
+                       class="alert-form-msg">
+                        <span ng-show="form.otherPassportRadio.$error.required">{{vm.cmError.idvdoc.required}}</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group appname-idv-primary-otherpassport alert-form clearfix"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.otherpassportCountry.$touched) && form.otherpassportCountry.$invalid}">
+                <label for="otherpassportCountry" class="col-sm-4 text-right">From what country?</label>
+                <div class="col-sm-6">
+                    <div class="input-field-select-wrapper">
+                        <select id="otherpassportCountry" class="input-field-select" name="otherpassportCountry"
+                                ng-model="vm.idv.otherpassport.country"
+                                ng-options="k.code as k.name for k in vm.countryList" ng-required="true">
+                            <option value="">Please Select</option>
+                        </select>
+                    </div>
+                    <p ng-show="(form.$submitted || form.otherpassportCountry.$touched) && form.otherpassportCountry.$invalid"
+                       class="alert-form-msg">{{vm.cmError.issuerCountry.required}}</p>
+                </div>
+
+            </div>
+
+            <div class="form-group appname-idv-primary-otherpassport alert-form clearfix"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.otherpassportNumber.$touched) && form.otherpassportNumber.$invalid}">
+                <label for="otherpassportNumber" class="col-sm-4 text-right">Passport number</label>
+                <div class="col-sm-6">
+                    <input type="text" class="input-field" name="otherpassportNumber" id="otherpassportNumber"
+                           ng-model="vm.idv.otherpassport.number" ng-required="true" ng-pattern="/^[a-z0-9]*$/i">
+                    <p ng-show="(form.$submitted || form.otherpassportNumber.$touched) && form.otherpassportNumber.$invalid"
+                       class="alert-form-msg">
+                        <span ng-show="form.otherpassportNumber.$error.required">{{vm.cmError.passportNum.required}}</span>
+                        <span ng-show="form.otherpassportNumber.$error.pattern">{{vm.cmError.passportNum.invalid}}</span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="form-group clearfix"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.otherpassportIssueDate.touched) && form.otherpassportIssueDate.$invalid}">
+                <label class="col-sm-4 text-right">Issue date</label>
+                <div class="col-sm-6 no-padding-lr">
+                    <appname-date-input id="9" ng-model="vm.idv.otherpassport.issueDate" data-ng-required="true"
+                                          data-yearsintopast="30" data-yearsintofuture="0"
+                                          name="otherpassportIssueDate" data-date-type="issue"></appname-date-input>
+                    <p ng-show="(form.$submitted || form.otherpassportIssueDate.touched) && form.otherpassportIssueDate.$invalid"
+                       class="alert-form-msg left-padding-3sm">
+                        <span ng-show="form.otherpassportIssueDate.$error.required">{{vm.cmError.issueDate.required}}</span>
+                        <span ng-show="form.otherpassportIssueDate.$error.issue">{{vm.cmError.issueDate.issue}}</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group clearfix"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.otherpassportExpiryDate.touched) && form.otherpassportExpiryDate.$invalid}">
+                <label class="col-sm-4 text-right">Expiry date</label>
+                <div class="col-sm-6 no-padding-lr">
+                    <appname-date-input id="10" ng-model="vm.idv.otherpassport.expiryDate" data-ng-required="true"
+                                          data-yearsintopast="1" data-yearsintofuture="20"
+                                          name="otherpassportExpiryDate" data-date-type="expiry"></appname-date-input>
+                    <p ng-show="(form.$submitted || form.otherpassportExpiryDate.touched) && form.otherpassportExpiryDate.$invalid"
+                       class="alert-form-msg left-padding-3sm">
+                        <span ng-show="form.otherpassportExpiryDate.$error.required">{{vm.cmError.expiryDate.required}}</span>
+                        <span ng-show="form.otherpassportExpiryDate.$error.expiry">{{vm.cmError.expiryDate.expiry}}</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group clearfix">
+            <label class="checkbox js-collapsible js-rendered" for="translateConsentOtherPassport">
+                <input class="checkbox-input" type="checkbox" id="translateConsentOtherPassport" title="translateConsent"
+                       name="translateConsentOtherPassport"
+                       ng-model="vm.idv.otherpassport.translateConsent">
+                <span class="checkbox-text">I confirm this document is not in a language that I understand but is accompanied by an English translation prepared by an accredited translator.</span>
+            </label>
+        </div>
+
+    </div>
+</div>

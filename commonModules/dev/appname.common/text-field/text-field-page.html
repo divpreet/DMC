@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../app/dev/appname.common.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="../../app/dev/appname.common.js"></script>
+
+    <script type="text/javascript">
+        var myApp = angular.module('myApp', ['appname.common']);
+
+    </script>
+
+</head>
+
+<body ng-app="myApp">
+
+    <main class="container">
+        <h1 class="body-font"> Directive: header </h1>
+        <form name="testForm">
+            <div class="row">
+                <div class="col-md-4">
+                    <appname-text-field name="test" type="input" model="testModel" error-msg="test error" is-invalid="{{testForm.$invalid}}" group-prefix="$" label="Test" is-disabled="false" locked-tooltip-msg="test" locked-tooltip-position="test field locked" placeholder-text="test" validate-type="number" validate-max-value="545345" validate-maxlength="4" validate-disable="true" validate-pattern="^\d{0,8}[\.]?\d{0,2}$" validate-pattern-on-blur="^\d{0,7}[\.]?\d{0,2}$" apply-filter-on-blur="number:2" additional-business-validation="false" required-length="4" validate-required="true" regex-flags="" on-common-validate-change=" " on-common-validate-blur=" "></appname-text-field>
+                </div>
+            </div>
+        </form>
+    </main>
+
+</body>
+
+</html>

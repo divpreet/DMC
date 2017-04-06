@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+   <link rel="stylesheet" href=".././app/build/dmc.debitcardapp.min.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+   <script src=".././app/build/dmc.debitcardapp.js"></script>
+
+   <script type="text/javascript">
+      var myApp = angular.module('myApp', ['dmc.debitcardapp']);
+   </script>
+
+</head>
+<body ng-app="myApp">
+
+   <main class="container">
+      <h1 class="body-font"> Directive: confirm-order </h1>
+      <dmc-confirm-order my-param="{{mock.simple_string.value}}"></dmc-confirm-order>
+   </main>
+
+</body>
+</html>

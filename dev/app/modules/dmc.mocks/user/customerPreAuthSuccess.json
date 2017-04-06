@@ -1,0 +1,10 @@
+{
+  "status": "Success",
+  "customerDetails": {
+    "customerName": "Westpac",
+    "accountHolderName": "Westpac Inc",
+    "accountType": "Everyday Banking",
+    "accountOpenDate": "01/01/2017",
+    "mobileNumber": "61*******98"
+  }
+}

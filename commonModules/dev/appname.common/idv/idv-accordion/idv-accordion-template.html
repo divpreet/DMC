@@ -1,0 +1,142 @@
+<div class="appname-idv-accordion">
+    <div class="tabcordion tabcordion-lego tabcordion-accordion">
+        <div class="tabcordion-body-header js-collapsible-tab is-active" id="primaryHeader">
+            <a href="javascript:void(0)" class="tabcordion-body-headline js-collapsible"
+               ng-click="vm.toggleTabs('primaryContent', 'primaryHeader')">Primary Photographic
+                Identification</a>
+
+        </div>
+        <div id="primaryContent" class="collapsible-body is-open" aria-hidden="false" tabindex="-1">
+            <div class="tabcordion-body">
+
+                <div class="form-group clearfix">
+                    <label class="checkbox js-collapsible js-rendered" for="auPassport">
+                        <input class="checkbox-input" type="checkbox" id="auPassport" title="auPassport"
+                               data-collapsible="#auPassportContent"
+                               name="auPassport" ng-model="vm.idv.aupassport.selected">
+                        <span class="checkbox-text">Passport - Australian</span>
+                    </label>
+
+                    <appname-idv-primary-aupassport ng-if="vm.idv.aupassport.selected == true"></appname-idv-primary-aupassport>
+
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="checkbox js-collapsible js-rendered" for="otherPassport">
+                        <input class="checkbox-input" type="checkbox" id="otherPassport" title="otherPassport"
+                               name="otherPassport" ng-model="vm.idv.otherpassport.selected">
+                        <span class="checkbox-text">Passport - Foreign</span>
+                    </label>
+
+                    <appname-idv-primary-otherpassport ng-if="vm.idv.otherpassport.selected == true"></appname-idv-primary-otherpassport>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="checkbox js-collapsible js-rendered" for="auLicence"
+                           data-collapsible="#auLicenceContent">
+                        <input class="checkbox-input" type="checkbox" id="auLicence" title="auLicence" name="auLicence"
+                               ng-model="vm.idv.aulicence.selected">
+                        <span class="checkbox-text">Australian Driver's Licence/Permit</span>
+                    </label>
+                    <appname-idv-primary-aulicence ng-if="vm.idv.aulicence.selected == true"></appname-idv-primary-aulicence>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="checkbox js-collapsible js-rendered" for="ageProof"
+                           data-collapsible="#ageProofContent">
+                        <input class="checkbox-input" type="checkbox" id="ageProof" title="ageProof" name="ageProof"
+                               ng-model="vm.idv.ageproof.selected">
+                        <span class="checkbox-text">Proof of Age Card</span>
+                    </label>
+                    <appname-idv-primary-ageproof ng-if="vm.idv.ageproof.selected == true"></appname-idv-primary-ageproof>
+                </div>
+
+                <div class="form-group clearfix">
+                    <label class="checkbox js-collapsible js-rendered" for="otherLicence"
+                           data-collapsible="#otherLicenceContent">
+                        <input class="checkbox-input" type="checkbox" id="otherLicence" title="otherLicence"
+                               name="otherLicence" ng-model="vm.idv.otherlicence.selected">
+                        <span class="checkbox-text">Foreign Drivers Licence which contains a photograph</span>
+                    </label>
+                    <appname-idv-primary-otherlicence ng-if="vm.idv.otherlicence.selected == true"></appname-idv-primary-otherlicence>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="tabcordion-body-header js-collapsible-tab" id="nonprimaryHeader">
+            <a href="javascript:void(0)" class="tabcordion-body-headline js-collapsible"
+               ng-click="vm.toggleTabs('nonprimaryContent', 'nonprimaryHeader')">Primary Non–Photographic
+                Identification</a>
+        </div>
+        <div id="nonprimaryContent" class="collapsible-body" aria-hidden="true" tabindex="-1">
+            <div class="tabcordion-body">
+                <div class="form-group clearfix">
+                    <label class="checkbox js-collapsible js-rendered" for="auBirthCert"
+                           data-collapsible="#auBirthCertContent">
+                        <input class="checkbox-input" type="checkbox" id="auBirthCert" title="auBirthCert"
+                               name="auBirthCert" ng-model="vm.idv.birthcert.selected">
+                        <span class="checkbox-text">Birth Certificate - Australian</span>
+                    </label>
+                    <appname-idv-nonphoto-birthcert ng-if="vm.idv.birthcert.selected == true"></appname-idv-nonphoto-birthcert>
+                </div>
+                <div class="form-group clearfix">
+                    <label class="checkbox js-collapsible js-rendered" for="pensionCard"
+                           data-collapsible="#pensionCardContent">
+                        <input class="checkbox-input" type="checkbox" id="pensionCard" title="pensionCard"
+                               name="pensionCard" ng-model="vm.idv.pension.selected">
+                        <span class="checkbox-text">Pension Card - Centrelink</span>
+                    </label>
+                    <appname-idv-nonphoto-pension ng-if="vm.idv.pension.selected == true"></appname-idv-nonphoto-pension>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabcordion-body-header js-collapsible-tab" id="secondaryHeader">
+            <a href="javascript:void(0)" class="tabcordion-body-headline js-collapsible"
+               ng-click="vm.toggleTabs('secondaryContent', 'secondaryHeader')">Secondary Identification <em>(Only
+                in combination with primary documentation)</em></a>
+        </div>
+        <div id="secondaryContent" class="collapsible-body" aria-hidden="true" tabindex="-1">
+            <div class="tabcordion-body">
+                <div class="form-group clearfix">
+                    <label class="checkbox js-collapsible js-rendered" for="medicareCard"
+                           data-collapsible="#medicareCardContent">
+                        <input class="checkbox-input" type="checkbox" id="medicareCard" title="medicareCard"
+                               name="medicareCard" ng-model="vm.idv.medicare.selected">
+                        <span class="checkbox-text">Medicare card</span>
+                    </label>
+                    <appname-idv-secondary-medicare ng-if="vm.idv.medicare.selected == true"></appname-idv-secondary-medicare>
+                </div>
+                <div class="form-group clearfix">
+                    <label class="checkbox js-collapsible js-rendered" for="marriageCert"
+                           data-collapsible="#marriageCertContent">
+                        <input class="checkbox-input" type="checkbox" id="marriageCert" title="marriageCert"
+                               name="marriageCert" ng-model="vm.idv.marriagecert.selected">
+                        <span class="checkbox-text">Australian Marriage Certificate</span>
+                    </label>
+                    <appname-idv-secondary-marriagecert ng-if="vm.idv.marriagecert.selected == true"></appname-idv-secondary-marriagecert>
+                </div>
+                <div class="form-group clearfix">
+                    <label class="checkbox js-collapsible js-rendered" for="auGovtCard"
+                           data-collapsible="#auGovtCardContent">
+                        <input class="checkbox-input" type="checkbox" id="auGovtCard" title="auGovtCard"
+                               name="auGovtCard" ng-model="vm.idv.govtcard.selected">
+                        <span class="checkbox-text">Australian Govnt issued card - Card issued under a Commonwealth, State or Territory law for the purpose of identification, for a government service, or as a licence</span>
+                    </label>
+                    <appname-idv-secondary-govtcard ng-if="vm.idv.govtcard.selected == true"></appname-idv-secondary-govtcard>
+                </div>
+                <div class="form-group clearfix">
+                    <label class="checkbox js-collapsible js-rendered" for="utilCard"
+                           data-collapsible="#utilCardContent">
+                        <input class="checkbox-input" type="checkbox" id="utilCard" title="utilCard"
+                               name="utilCard" ng-model="vm.idv.utilcard.selected">
+                        <span class="checkbox-text">Utilities notice issued by local government or utilities provider</span>
+                    </label>
+                    <appname-idv-secondary-utilcard ng-if="vm.idv.utilcard.selected == true"></appname-idv-secondary-utilcard>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

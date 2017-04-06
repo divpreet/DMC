@@ -1,0 +1,118 @@
+<div class="appname-idv-primary-otherlicence">
+
+    <div class="well well-responsive clearfix top-margin3-xs top-margin3-sm">
+        <h5>Must be current and include the customer's signature and photograph. You must enter an expiry date. If there
+            is no expiry date, you must select "No expiry date" and enter an issue date.</h5>
+        <div class="col-sm-9 top-margin3-sm idv-center">
+
+            <div class="form-group form-radio"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.otherLicenceRadio.$dirty) && form.otherLicenceRadio.$invalid}">
+
+                <label class="col-sm-4 text-right">Original or Certified Copy</label>
+                <div class="form-group col-sm-6 clearfix">
+                    <label class="radio">
+                        <input class="radio-input" type="radio" id="otherLicenceRadio1" name="otherLicenceRadio"
+                               ng-model="vm.idv.otherlicence.radio" value="yes" ng-required="true">
+                        <span class="radio-text">Yes—Original</span>
+                    </label>
+                    <label class="radio">
+                        <input class="radio-input" type="radio" id="otherLicenceRadio2" name="otherLicenceRadio"
+                               value="no"
+                               ng-model="vm.idv.otherlicence.radio" ng-required="true">
+                        <span class="radio-text">No—Certified copy</span>
+                    </label>
+                    <p ng-show="(form.$submitted || form.otherLicenceRadio.$dirty) && form.otherLicenceRadio.$invalid"
+                       class="alert-form-msg">
+                        <span ng-show="form.otherLicenceRadio.$error.required">{{vm.cmError.idvdoc.required}}</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group appname-idv-primary-otherlicence alert-form clearfix"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.otherlicenceCountry.$touched) && form.otherlicenceCountry.$invalid}">
+                <label for="otherlicenceCountry" class="col-sm-4 text-right">From what country?</label>
+                <div class="col-sm-6">
+                    <div class="input-field-select-wrapper">
+                        <select id="otherlicenceCountry" class="input-field-select" name="otherlicenceCountry"
+                                ng-model="vm.idv.otherlicence.country"
+                                ng-options="k.code as k.name for k in vm.countryList" ng-required="true">
+                            <option value="">Please Select</option>
+                        </select>
+                    </div>
+                    <p ng-show="(form.$submitted || form.otherlicenceCountry.$touched) && form.otherlicenceCountry.$invalid"
+                       class="alert-form-msg">{{vm.cmError.issuerCountry.required}}</p>
+                </div>
+
+            </div>
+
+            <div class="form-group appname-idv-primary-otherlicence alert-form clearfix"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.otherlicenceNumber.$touched) && form.otherlicenceNumber.$invalid}">
+                <label for="otherlicenceNumber" class="col-sm-4 text-right">Licence number</label>
+                <div class="col-sm-6">
+                    <input type="text" class="input-field" name="otherlicenceNumber" id="otherlicenceNumber"
+                           ng-model="vm.idv.otherlicence.number" ng-required="true" ng-pattern="/^[a-z0-9]*$/i">
+                    <p ng-show="(form.$submitted || form.otherlicenceNumber.$touched) && form.otherlicenceNumber.$invalid"
+                       class="alert-form-msg">
+                        <span ng-show="form.otherlicenceNumber.$error.required">{{vm.cmError.licenceNum.required}}</span>
+                        <span ng-show="form.otherlicenceNumber.$error.pattern">{{vm.cmError.licenceNum.invalid}}</span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="form-group clearfix"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.otherlicenceIssueDate.touched) && form.otherlicenceIssueDate.$invalid}">
+                <label class="col-sm-4 text-right">Issue date</label>
+                <div class="col-sm-6 no-padding-lr">
+                    <appname-date-input id="7" ng-model="vm.idv.otherlicence.issueDate" data-ng-required="true"
+                                          data-yearsintopast="30" data-yearsintofuture="0"
+                                          name="otherlicenceIssueDate" data-date-type="issue"></appname-date-input>
+                    <p ng-show="(form.$submitted || form.otherlicenceIssueDate.touched) && form.otherlicenceIssueDate.$invalid"
+                       class="alert-form-msg left-padding-3sm">
+                        <span ng-show="form.otherlicenceIssueDate.$error.required">{{vm.cmError.issueDate.required}}</span>
+                        <span ng-show="form.otherlicenceIssueDate.$error.issue">{{vm.cmError.issueDate.issue}}</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="form-group clearfix"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.otherlicenceExpiryDate.touched) && form.otherlicenceExpiryDate.$invalid && !vm.idv.otherlicence.noExpiry}">
+                <label class="col-sm-4 text-right">Expiry date</label>
+                <div class="col-sm-6 no-padding-lr">
+                    <appname-date-input id="8" ng-model="vm.idv.otherlicence.expiryDate" data-ng-required="!vm.idv.otherlicence.noExpiry" data-yearsintopast="1" data-yearsintofuture="20"
+                                          name="otherlicenceExpiryDate" data-disable-required="{{vm.idv.otherlicence.noExpiry}}" data-date-type="expiry"></appname-date-input>
+                    <p ng-show="(form.$submitted || form.otherlicenceExpiryDate.touched) && form.otherlicenceExpiryDate.$invalid && !vm.idv.otherlicence.noExpiry"
+                       class="alert-form-msg left-padding-3sm">
+                        <span ng-show="form.otherlicenceExpiryDate.$error.required">{{vm.cmError.expiryDate.required}}</span>
+                        <span ng-show="form.otherlicenceExpiryDate.$error.expiry">{{vm.cmError.expiryDate.expiry}}</span> 
+                    </p>
+                </div>
+            </div>
+            
+            <div class="form-group clearfix">
+                <label class="col-sm-4 text-right"> </label>
+                <div class="col-sm-6">
+                    <label class="checkbox js-collapsible js-rendered" for="otherlicencenoExpiry">
+                        <input class="checkbox-input" type="checkbox" id="otherlicencenoExpiry"
+                               title="otherlicencenoExpiry"
+                               name="otherlicencenoExpiry"
+                               ng-model="vm.idv.otherlicence.noExpiry" ng-change="vm.checkExpiryDate()">
+                        <span class="checkbox-text">No expiry date</span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group clearfix">
+            <label class="checkbox js-collapsible js-rendered" for="translateConsent">
+                <input class="checkbox-input" type="checkbox" id="translateConsent" title="translateConsent"
+                       name="translateConsent"
+                       ng-model="vm.idv.otherlicence.translateConsent">
+                <span class="checkbox-text">I confirm that this document is not in a language that I understand but is accompanied by an English translation prepared by an accredited translator.</span>
+            </label>
+        </div>
+
+    </div>
+
+</div>

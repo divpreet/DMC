@@ -1,0 +1,77 @@
+sgbcccDebitCardContentCallback({
+  "status": "1",
+  "data": {
+    "telephoneNumber" : {
+            "wbc": "132 142",
+            "stg": "133 800",
+            "bom": "13 82 66",
+            "bsa": "1800 804 411"
+    },
+    "brandHomePageURLs" : {
+        "wbc": "https://www.westpac.com.au",
+        "stg": "https://www.stgeorge.com.au/",
+        "bom": "https://www.bankofmelbourne.com.au/",
+        "bsa": "https://www.banksa.com.au/"
+    },
+    "tcURLs" : {
+        "stg": {
+            "freedom business account": "https://webapps.stgeorge.com.au/pds/redirects/BusinessTerms/BusinessTerms%2816%29.pdf",
+            "business cheque account plus": "https://webapps.stgeorge.com.au/pds/redirects/BusinessTerms/BusinessTerms%2816%29.pdf",
+            "business access saver": "https://webapps.stgeorge.com.au/pds/redirects/BusinessAccessSaverTerms/BusinessAccessSaverTerms%287%29.pdf"
+        },
+        "bom": {
+            "freedom business account": "https://webapps.bankofmelbourne.com.au/pds/redirects/BusinessTerms/BusinessTerms%2812%29.pdf",
+            "business cheque account plus": "https://webapps.bankofmelbourne.com.au/pds/redirects/BusinessTerms/BusinessTerms%2812%29.pdf",
+            "business access saver": "https://webapps.bankofmelbourne.com.au/pds/redirects/BusinessAccessSaverTerms/BusinessAccessSaverTerms%287%29.pdf"
+        },
+        "bsa": {
+            "freedom business account": "http://webapps.banksa.com.au/pds/redirects/TransactionTerms/TransactionTerms%2835%29.pdf",
+            "business cheque account plus": "http://webapps.banksa.com.au/pds/redirects/TransactionTerms/TransactionTerms%2835%29.pdf",
+            "business access saver": "https://webapps.banksa.com.au/pds/redirects/TransactionTerms/TransactionTerms%2835%29.pdf"
+        }
+    },
+    "landing": {
+        "info" : "Your new business transaction account comes with a Business Visa Debit Card. Please follow our secure card approval process to finalise your card order. It’ll take less than a minute to complete. You will receive your card in the mail within 3-5 working days.",
+        "stepLine1" : "To get started, we’ll need to confirm that this is really",
+        "stepLine2" : "We’ll send an SMS verification code to",
+        "preOTPbutton": "Send SMS verification code",
+        "postOTPbutton": "Verify and continue",
+        "contactInfo" : "Mobile number or information above incorrect?",
+        "desktopContact" : "Please call us on",
+        "mobileContact" : "Call us on"
+    },
+    "confirmDetails" : {
+      "consentLine1":"By clicking on &#8216;Order now&#8217;&#8218; you",
+      "consentLine2":"agree&#58;",
+      "desktopContact" : "Please cancel if the above details are incorrect and call us on",
+      "contactInfo" : "Please cancel and call us if the above details are incorrect",
+      "mobileContact" : "Call us on"
+    },
+    "modalContent" :{
+        "cancelModal" : {
+            "title":"Are you sure?",
+            "content" : "This will discontinue the card ordering process. You can proceed again later using the same link from your email.",
+            "button1" : "Go back",
+            "button2" : "Cancel"
+        }
+    },
+    "successScreen" : {
+        "emailConfirmation" : "We’ve sent a confirmation email with terms and conditions to <strong>{0}</strong>.",
+        "deliveryAddressConfirmation" : "Your Business Visa Debit Card will be delivered to <strong>{0}</strong> in 3-5 working days.",
+        "pinInstruction" : "Your PIN and instructions on how to activate your debit card will arrive in a separate letter a few days later.",
+        "buttonText" : "Visit {0} homepage"
+    },
+    "footer" : {
+        "copyrightLine1": "Our site and your transactions are secure. You can read ",
+        "securityLinkText": "our security information",
+        "copyrightLine2": "&nbsp;- A division of Westpac Banking Corporation ABN 33 007 457 141",
+        "copyrightLine3": "AFSL and Australian credit licence 233714",
+        "brandName": {
+            "wbc": "Westpac",
+            "stg": "St&#46; George Bank",
+            "bom": "Bank of Melbourne",
+            "bsa": "BankSA"
+        }
+    }
+  }
+})

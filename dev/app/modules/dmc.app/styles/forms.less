@@ -1,0 +1,55 @@
+@import (reference) "../../gui.blend/index.less";
+
+@color-dmc-input-error: @color-Danger;
+
+.input-error() {
+	border: 1px solid @color-dmc-input-error;
+}
+
+.input-addon-error() {
+	border-bottom-color: @color-dmc-input-error;
+	border-left-color: @color-dmc-input-error;
+	border-top-color: @color-dmc-input-error;
+
+	border-right-style: none;
+	border-right-width: 0px;
+
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+
+.padding-form-row() {
+	padding: 5px 0;
+}
+
+.dmc-field() {
+    margin: 10px auto;
+}
+.dmc-label() {
+    font-weight: 500;
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+.dmc-disabled() {
+    pointer-events: none;
+    opacity: 0.6;
+}
+.dmc-tooltip() {
+    @media only screen and (min-width: @screen-md) {
+        .tooltip {
+            float: right;
+        }
+    }
+    svg path {
+        fill: @color-H;
+    }
+}
+.mandatory() {
+    color: red;
+}

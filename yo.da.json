@@ -1,0 +1,15 @@
+{
+  "lazyload": false,
+  "angularVersion": "1.4.8",
+  "appFolder": "/app",
+  "distFolder": "/build/",
+  "componentsFolder": "/modules/",
+  "brands": [
+    "WBC",
+    "STG",
+    "BOM",
+    "BSA"
+  ],
+  "randomNumber": 1490326399697,
+  "appPrefix": "dmc"
+}

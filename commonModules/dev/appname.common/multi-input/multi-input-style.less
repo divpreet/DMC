@@ -1,0 +1,31 @@
+@import (reference) "../../gui.blend/index.less";
+@import (reference) "../../appname.app/index.less";
+.appname-multi-input {
+    .btn-group {
+        &-title {
+            .appname-label();
+        }
+    }
+    .disabled {
+        .appname-disabled();
+    }
+    &__mandatory {
+        color: red;
+    }
+    &__fieldset {
+        &__icon {
+            display: inline-block;
+            float: right;
+            margin-top: 4px;
+            .appname-tooltip();
+        }
+    }
+    &__new-row{
+        margin-bottom: 10px;
+    }
+    &__remove{
+        line-height: 36px;
+        padding: 10px;
+        bottom: -10px;
+    }
+}

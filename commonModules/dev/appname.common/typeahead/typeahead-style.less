@@ -1,0 +1,50 @@
+@import (reference) "../../gui.blend/index.less";
+@import (reference) "../../appname.app/index.less";
+.appname-typeahead {
+    .btn-group {
+        &-title {
+            .appname-label();
+        }
+    }
+    .disabled {
+        .appname-disabled();
+    }
+    &__mandatory {
+        color: red;
+    }
+    &__fieldset {
+        &__icon {
+            display: inline-block;
+            float: right;
+            margin-top: 4px;
+            .appname-tooltip();
+        }
+    }
+    .btn-group-item {
+        .btn-group-text.has-warning {
+            border-color: @color-Warning;
+        }
+    }
+    .input-group-row{
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        & .input-group-input{
+            width: 83.33333333%;
+            float: left;
+            position: relative;
+            min-height: 1px;
+        }
+        & .input-group-addon{
+            width: 16.66666666%;
+            max-width: 36px;
+            float: left;
+            position: relative;
+            min-height: 1px;
+        }
+    }
+
+    & > div{
+        display: block;
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "status": "Success",
+    "customerDetails": {
+        "customerName": "Westpac",
+        "email": "andrew.smith@gmail.com",
+        "deliveryAddress": "10 Crown St. REDFERN NSW 2000"
+    }
+}

@@ -1,0 +1,12 @@
+<div class="appname-typeahead">
+    <label ng-if="vm.groupTitle.length" class="btn-group-title">{{ vm.groupTitle}}<span ng-if="vm.isRequired" class="appname-typeahead__mandatory">*</span></label>
+    <gui-tooltip ng-if="vm.isDisabled" position="{{vm.tooltipPosition}}" tooltip-title="{{vm.cmLockedFieldMsg}}" class="appname-typeahead__fieldset__icon">
+        <span class="icon icon-size-sm icon-padlock" data-grunticon-embed></span>
+    </gui-tooltip>
+    <div class="btn-dropdown is-open" ng-class="{'disabled':vm.isDisabled}">
+        <input name="{{vm.name}}" class="test_appname-typeahead_label_{{vm.name}} input-field" id="typeahead"
+               ng-class="{'disabled':vm.isDisabled}"
+               ng-required="vm.isRequired" data-provide="typeahead">
+    </div>
+    <p ng-if="vm.errorMsg && vm.isInvalid" class="alert-form-msg">{{:: vm.errorMsg}}</p>
+</div>

@@ -1,0 +1,164 @@
+@import (reference) '../../dmc.app/variables/index.less';
+
+.dmc-landing-page {
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    width: 100%;
+    &__well {
+      margin-top: 30px;
+      margin-bottom: 0;
+      border: 0;
+      &__alert{
+        padding: 12px 18px;
+        margin: 21px 0;
+      }
+      &__line{
+        line-height: 36px;
+      }
+      &__btn {
+        margin: 10px 0;
+        width: 100%;
+      }
+    }
+    &__link{
+      text-decoration: underline;
+    }
+    &__text-title {
+      color: @color-F;
+    }
+    &__text-main {
+      font-size: 16px;
+    }
+    &__row-group {
+      margin-top: 30px;
+      &__row {
+        margin: 18px -6px;
+        &__col-head {
+          color: @color-C;
+          font-weight: 400;
+          font-size: 14px;
+        }
+        &__col-value {
+          font-size: 16px;
+        }
+      }
+    }
+    &__helptext {
+      color: @color-A
+    }
+    &__sendSMSSection{
+      max-width: 600px;
+      &__verifyLoader {
+        margin-bottom: -10px;
+      }
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    margin-top: -70px;
+    &__content{
+      padding: 70px 0 60px 0;
+      &__text-main{
+        margin-top: 30px;
+      }
+      &__sendSMSSection{
+        margin: auto;
+        &__loaderImg{
+          margin-top: 30px;
+        }
+        &__verifyWrapper{
+          margin-top: 12px;
+        }
+        &__alert-form{
+          margin-bottom: 0 !important;
+        }
+      }
+      &__well-text {
+        display: block;
+        font-size: 16px;
+      }
+      &__well {
+        margin-top: 42px;
+        &__line {
+          text-align: right;
+        }
+      }
+      &__row-group {
+        &__row {
+          &__col-head {
+            text-align: right;
+          }
+          &__col-value {
+            text-align: left;
+          }
+        }
+      }
+      &__btn {
+        margin: 12px 0;
+      }
+      &__info-line {
+        color: @color-C;
+        margin-top: 30px;
+        margin-bottom: 18px;
+      }
+    }
+    .show-mobile {
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    padding: 0;
+    margin-top: -100px;
+    &__content{
+      padding: 100px 0 0 0;
+      &__text-title {
+        font-size: 24px;
+      }
+      &__well {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        &__line {
+          text-align: left;
+        }
+      }
+      &__row-group {
+        &__row {
+          &__col-head {
+            text-align: left;
+          }
+          &__col-value {
+            text-align: left;
+          }
+        }
+      }
+      &__sendSMSSection{
+        margin-top: 30px;
+      }
+      &__btn{
+        width: 100%;
+      }
+      &__small{
+        font-size: 14px;
+        font-weight: 400;
+      }
+      &__mobile{
+        &__line{
+          margin-top: 10px;
+          color: @color-C;
+          line-height: 36px;
+        }
+        &__btn {
+          width: 100%;
+          margin-bottom: 18px;
+        }
+      }
+    }
+    .hide-mobile {
+      display: none;
+    }
+  }
+}

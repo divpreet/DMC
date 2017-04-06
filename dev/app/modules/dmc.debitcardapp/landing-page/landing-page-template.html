@@ -1,0 +1,100 @@
+<div class="dmc-landing-page container">
+
+	<div class="dmc-landing-page__content">
+		<dmc-main-panel>
+			<h3 class="dmc-landing-page__content__text-title text-left brand-font">
+				{{vm.customer.firstName}}, please approve your card order
+			</h3>
+			<div class="dmc-landing-page__content__text-main text-left body-font">
+				Your new business transaction account comes with a Business Visa Debit Card. Please follow our secure card approval process to
+				finalise your card order. It'll take less than a minute to complete. You will receive your card in the mail within 3-5 working days.
+			</div>
+			<div class="dmc-landing-page__content__row-group">
+				<div class="dmc-landing-page__content__row-group__row row body-font">
+					<div class="col-sm-5 dmc-landing-page__content__row-group__row__col-head">
+						Linked account
+					</div>
+					<div class="col-sm-7 dmc-landing-page__content__row-group__row__col-value">
+						{{vm.customer.accountType}}
+					</div>
+				</div>
+				<div class="dmc-landing-page__content__row-group__row row body-font">
+					<div class="col-sm-5 dmc-landing-page__content__row-group__row__col-head">
+						Account holder
+					</div>
+					<div class="col-sm-7 dmc-landing-page__content__row-group__row__col-value">
+						{{vm.customer.accountHolderName}}
+					</div>
+				</div>
+				<div class="dmc-landing-page__content__row-group__row row body-font">
+					<div class="col-sm-5 dmc-landing-page__content__row-group__row__col-head">
+						Account opened
+					</div>
+					<div class="col-sm-7 dmc-landing-page__content__row-group__row__col-value">
+						{{vm.customer.accountOpenDate}}
+					</div>
+				</div>
+			</div>
+			<div class="dmc-landing-page__content__well well well-responsive">
+				<span class="body-font dmc-landing-page__content__well-text">
+					To get started, we'll need to confirm that this is really {{vm.customer.firstName}}.
+				</span>
+				<span class="body-font dmc-landing-page__content__well-text">
+					We'll send an SMS verification code to <strong>{{vm.customer.contactMasked}}</strong>.
+				</span>
+				<div ng-switch="vm.displaySMSButtonOrMsg()" class="dmc-landing-page__content__sendSMSSection">
+					<button type="button" class="btn btn-primary btn-lg hide-mobile dmc-landing-page__content__btn"
+					        ng-switch-when='displayButton' ng-click="vm.sendAccessCode()">Send SMS verification code</button>
+					<button type="button" class="btn btn-primary btn-xl show-mobile dmc-landing-page__content__btn"
+					        ng-switch-when='displayButton' ng-click="vm.sendAccessCode()">Send SMS verification code</button>
+					<div class="icon icon-size-md icon-loading dmc-landing-page__content__sendSMSSection__loaderImg" ng-switch-when='displayLoader'></div>
+					<div ng-switch-when='displayMessage'>
+						<div class="alert js-alert alert-info dmc-landing-page__content__well__alert row" role="alert">
+							<span class="icon icon-size-sm icon-message col-xs-1"></span>
+							<span class="text-left col-xs-11"> <strong>An SMS verification code was sent.</strong> It may take up to 20 seconds to arrive.</span>
+						</div>
+						<div class="row">
+							<div class="col-sm-4 dmc-landing-page__content__well__line dmc-landing-page__content__small">
+								<label for="accessCode">
+									Enter SMS code </label>
+							</div>
+							<div class="dmc-landing-page__content__sendSMSSection__alert-form alert-form col-sm-5" ng-class="{'has-danger':vm.isCodeIncorrect || vm.isExpired}">
+								<div class="">
+									<input type="text" class="dmc-landing-page__content__sendSMSSection__input input-field"
+									       ng-model="vm.customer.accessCode" id="accessCode">
+								</div>
+								<p ng-if="vm.isCodeIncorrect && !vm.isExpired" class="alert-form-msg">
+									<span class="alert-icon icon icon-size-sm icon-alert"></span>
+									<span class="text-left">Oops! The entered verification code was incorrect. Please try again!</span>
+								</p>
+								<p ng-if="vm.isExpired" class="alert-form-msg">
+									<span class="alert-icon icon icon-size-sm icon-alert"></span>
+									<span class="text-left">The entered verification code has expired. Please request new code below!</span>
+								</p>
+								<div class="dmc-landing-page__content__sendSMSSection__verifyWrapper">
+									<button type="button" class="btn btn-primary btn-lg hide-mobile dmc-landing-page__content__well__btn"
+									        ng-disabled="vm.isExpired"
+									        ng-if="!vm.isVerifying" ng-click="vm.verifyAccessCode()">Verify and continue</button>
+									<button type="button" class="btn btn-primary btn-xl show-mobile dmc-landing-page__content__well__btn"
+									        ng-disabled="vm.isExpired"
+									        ng-if="!vm.isVerifying" ng-click="vm.verifyAccessCode()">Verify and continue</button>
+										<span class="icon icon-size-md icon-loading
+										dmc-landing-page__content__sendSMSSection__verifyLoader" ng-if="vm.isVerifying"></span>
+								</div>
+								<div class="" ng-if="!vm.isVerifying" >
+									<a href="" class="body-font dmc-landing-page__content__small
+									dmc-landing-page__content__link" ng-click="vm.sendAccessCode()">Re-send SMS verification code</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="body-font hide-mobile dmc-landing-page__content__info-line">Mobile number or information above incorrect? Please contact us on {{telephoneNumber}}.</div>
+			<div class="body-font show-mobile">
+				<div class="dmc-landing-page__content__mobile__line">Mobile number or information above incorrect?</div>
+				<div><a href="tel:{{telephoneNumber}}" class="btn btn-faint btn-lg dmc-landing-page__content__mobile__btn">Call us on {{telephoneNumber}}</a></div>
+			</div>
+		</dmc-main-panel>
+	</div>
+</div>

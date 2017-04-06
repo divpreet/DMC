@@ -1,0 +1,59 @@
+<div class="appname-idv-secondary-utilcard">
+    <div class="well well-responsive clearfix top-margin3-xs top-margin3-sm">
+        <h5>Must be less than 3 months old and include the customer's name and residential address.</h5>
+        <div class="col-sm-9 top-margin3-sm idv-center">
+            <div class="form-group form-radio" ng-class="{'alert-form has-danger': (form.$submitted || form.utilRadio.$dirty) && form.utilRadio.$invalid}">
+                <label class="col-sm-4 text-right">Original or Certified Copy</label>
+                <div class="form-group col-sm-6 clearfix">
+                    <label class="radio">
+                        <input class="radio-input" type="radio" id="utilRadio1" name="utilRadio" ng-model="vm.idv.utilcard.radio" value="yes" ng-required="true">
+                        <span class="radio-text">Yes—Original</span>
+                    </label>
+                    <label class="radio">
+                        <input class="radio-input" type="radio" id="utilRadio2" name="utilRadio" value="no" ng-model="vm.idv.utilcard.radio" ng-required="true">
+                        <span class="radio-text">No—Certified copy</span>
+                    </label>
+                    <p ng-show="(form.$submitted || form.utilRadio.$dirty) && form.utilRadio.$invalid" class="alert-form-msg">
+                        <span ng-show="form.utilRadio.$error.required">{{vm.cmError.idvdoc.required}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="form-group appname-idv-secondary-govtcard alert-form clearfix" ng-class="{'alert-form has-danger': (form.$submitted || form.utilIssuedBy.$touched) && form.utilIssuedBy.$invalid}">
+                <label for="utilIssuedBy" class="col-sm-4 text-right">Issued by</label>
+                <div class="col-sm-6">
+                    <input type="text" class="input-field" name="utilIssuedBy" id="utilIssuedBy" ng-model="vm.idv.utilcard.issuedBy" ng-required="true" ng-pattern="/^[a-zA-Z]{1}[a-zA-Z \-,]+$/">
+                    <p ng-show="(form.$submitted || form.utilIssuedBy.$touched) && form.utilIssuedBy.$invalid" class="alert-form-msg">
+                        <span ng-show="form.utilIssuedBy.$error.required">{{vm.cmError.issuerCountry.required}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="form-group clearfix" ng-class="{'alert-form has-danger': (form.$submitted || form.utilIssueDate.touched) && form.utilIssueDate.$invalid}">
+                <label class="col-sm-4 text-right">Issue date</label>
+                <div class="col-sm-6 no-padding-lr">
+                    <appname-date-input id="16" ng-model="vm.idv.utilcard.issueDate" data-ng-required="true" data-yearsintopast="30" data-yearsintofuture="0" name="utilIssueDate" data-date-type="issue"></appname-date-input>
+                    <p ng-show="(form.$submitted || form.utilIssueDate.touched) && form.utilIssueDate.$invalid" class="alert-form-msg left-padding-3sm">
+                        <span ng-show="form.utilIssueDate.$error.required">{{vm.cmError.issueDate.required}}</span>
+                        <span ng-show="form.utilIssueDate.$error.issue">{{vm.cmError.issueDate.issue}}</span>
+                    </p>
+                    <div class="col-sm-12 top-margin2-xs">
+                        <div class="alert js-alert alert-info" role="alert">
+                            <div class="alert-body">
+                                Document must be issued within three months prior to today.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group appname-idv-secondary-utilcard alert-form clearfix" ng-class="{'alert-form has-danger': (form.$submitted || form.utilNumber.$touched) && form.utilNumber.$invalid}">
+                <label for="utilNumber" class="col-sm-4 text-right">Reference number</label>
+                <div class="col-sm-6">
+                    <input type="text" class="input-field" name="utilNumber" id="utilNumber" ng-model="vm.idv.utilcard.number" ng-required="true" ng-pattern="/^[a-z0-9]*$/i">
+                    <p ng-show="(form.$submitted || form.utilNumber.$touched) && form.utilNumber.$invalid" class="alert-form-msg">
+                        <span ng-show="form.utilNumber.$error.required">{{vm.cmError.refNum.required}}</span>
+                        <span ng-show="form.utilNumber.$error.pattern">{{vm.cmError.refNum.invalid}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

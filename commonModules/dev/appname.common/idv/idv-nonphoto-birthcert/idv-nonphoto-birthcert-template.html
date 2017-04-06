@@ -1,0 +1,55 @@
+<div class="appname-idv-nonphoto-birthcert">
+
+	<div class="well well-responsive clearfix top-margin3-xs top-margin3-sm">
+		<h5>Full Australian birth certificate or extract issued by State/Territory Registry of Births, Deaths and Marriages.</h5>
+		<div class="col-sm-9 top-margin3-sm idv-center">
+
+			<div class="form-group form-radio"
+				 ng-class="{'alert-form has-danger': (form.$submitted || form.birthCertRadio.$dirty) && form.birthCertRadio.$invalid}">
+
+				<label class="col-sm-4 text-right">Original or Certified Copy</label>
+				<div class="form-group col-sm-6 clearfix">
+					<label class="radio">
+						<input class="radio-input" type="radio" id="birthCertRadio1" name="birthCertRadio"
+							   ng-model="vm.idv.birthcert.radio" value="yes" ng-required="true">
+						<span class="radio-text">Yes—Original</span>
+					</label>
+					<label class="radio">
+						<input class="radio-input" type="radio" id="birthCertRadio2" name="birthCertRadio"
+							   value="no"
+							   ng-model="vm.idv.birthcert.radio" ng-required="true">
+						<span class="radio-text">No—Certified copy</span>
+					</label>
+					<p ng-show="(form.$submitted || form.birthCertRadio.$dirty) && form.birthCertRadio.$invalid"
+					   class="alert-form-msg">
+						<span ng-show="form.birthCertRadio.$error.required">{{vm.cmError.idvdoc.required}}</span>
+					</p>
+				</div>
+			</div>
+
+
+
+			<div class="form-group appname-idv-nonphoto-birthcert alert-form clearfix"
+				 ng-class="{'alert-form has-danger': (form.$submitted || form.birthCertNumber.$touched) && form.birthCertNumber.$invalid}">
+				<label for="birthCertNumber" class="col-sm-4 text-right">Reference number</label>
+				<div class="col-sm-6">
+					<input type="text" class="input-field" name="birthCertNumber" id="birthCertNumber"
+						   ng-model="vm.idv.birthcert.number" ng-pattern="/^[a-z0-9]*$/i" ng-required="true">
+					<p ng-show="(form.$submitted || form.birthCertNumber.$touched) && form.birthCertNumber.$invalid"
+					   class="alert-form-msg">
+						<span ng-show="form.birthCertNumber.$error.required">{{vm.cmError.refNum.required}}</span>
+						<span ng-show="form.birthCertNumber.$error.pattern">{{vm.cmError.refNum.invalid}}</span>
+					</p>
+				</div>
+
+			</div>
+
+
+		</div>
+
+
+
+
+	</div>
+
+</div>

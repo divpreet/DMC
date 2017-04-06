@@ -1,0 +1,95 @@
+<div class="appname-idv-nonphoto-pension">
+
+    <div class="well well-responsive clearfix top-margin3-xs top-margin3-sm">
+        <h5>Must be current. You must enter an expiry date. If there is no expiry date, you must select "No expiry date"
+            and enter an issue date.</h5>
+        <div class="col-sm-9 top-margin3-sm idv-center">
+
+            <div class="form-group form-radio"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.pensionRadio.$dirty) && form.pensionRadio.$invalid}">
+
+                <label class="col-sm-4 text-right">Original or Certified Copy</label>
+                <div class="form-group col-sm-6 clearfix">
+                    <label class="radio">
+                        <input class="radio-input" type="radio" id="pensionRadio1" name="pensionRadio"
+                               ng-model="vm.idv.pension.radio" value="yes" ng-required="true">
+                        <span class="radio-text">Yes—Original</span>
+                    </label>
+                    <label class="radio">
+                        <input class="radio-input" type="radio" id="pensionRadio2" name="pensionRadio"
+                               value="no"
+                               ng-model="vm.idv.pension.radio" ng-required="true">
+                        <span class="radio-text">No—Certified copy</span>
+                    </label>
+                    <p ng-show="(form.$submitted || form.pensionRadio.$dirty) && form.pensionRadio.$invalid"
+                       class="alert-form-msg">
+                        <span ng-show="form.pensionRadio.$error.required">{{vm.cmError.idvdoc.required}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="form-group clearfix"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.pensionIssueDate.touched) && form.pensionIssueDate.$invalid}">
+                <label class="col-sm-4 text-right">Issue date</label>
+                <div class="col-sm-6 no-padding-lr">
+                    <appname-date-input id="2" ng-model="vm.idv.pension.issueDate" data-ng-required="true"
+                                          data-yearsintopast="30" data-yearsintofuture="0"
+                                          name="pensionIssueDate" data-date-type="issue"></appname-date-input>
+                    <p ng-show="(form.$submitted || form.pensionIssueDate.touched) && form.pensionIssueDate.$invalid"
+                       class="alert-form-msg left-padding-3sm">
+                        <span ng-show="form.pensionIssueDate.$error.required">{{vm.cmError.issueDate.required}}</span>
+                        <span ng-show="form.pensionIssueDate.$error.issue">{{vm.cmError.issueDate.issue}}</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group clearfix"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.pensionExpiryDate.touched) && form.pensionExpiryDate.$invalid && !vm.idv.pension.noExpiry}">
+                <label class="col-sm-4 text-right">Expiry date</label>
+                <div class="col-sm-6 no-padding-lr">
+                    <appname-date-input id="3" ng-model="vm.idv.pension.expiryDate" data-ng-required="!vm.idv.pension.noExpiry"
+                                          data-yearsintopast="1" data-yearsintofuture="20"
+                                          name="pensionExpiryDate" data-date-type="expiry" data-disable-required="{{vm.idv.pension.noExpiry}}"></appname-date-input>
+                    <p ng-show="(form.$submitted || form.pensionExpiryDate.touched) && form.pensionExpiryDate.$invalid && !vm.idv.pension.noExpiry"
+                       class="alert-form-msg left-padding-3sm">
+                        <span ng-show="form.pensionExpiryDate.$error.required">{{vm.cmError.expiryDate.required}}</span>
+                        <span ng-show="form.pensionExpiryDate.$error.expiry">{{vm.cmError.expiryDate.expiry}}</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group clearfix">
+                <label class="col-sm-4 text-right"> </label>
+                <div class="col-sm-6">
+                    <label class="checkbox js-collapsible js-rendered" for="pensionnoExpiry">
+                        <input class="checkbox-input" type="checkbox" id="pensionnoExpiry"
+                               title="pensionnoExpiry"
+                               name="pensionnoExpiry"
+                               ng-model="vm.idv.pension.noExpiry"  ng-change="vm.checkExpiryDate()">
+                        <span class="checkbox-text">No expiry date</span>
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="form-group appname-idv-nonphoto-pension alert-form clearfix"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.pensionNumber.$touched) && form.pensionNumber.$invalid}">
+                <label for="pensionNumber" class="col-sm-4 text-right">Document number</label>
+                <div class="col-sm-6">
+                    <input type="text" class="input-field" name="pensionNumber" id="pensionNumber"
+                           ng-model="vm.idv.pension.number" ng-required="true" ng-pattern="/^[a-z0-9]*$/i">
+                    <p ng-show="(form.$submitted || form.pensionNumber.$touched) && form.pensionNumber.$invalid"
+                       class="alert-form-msg">
+                        <span ng-show="form.pensionNumber.$error.required">{{vm.cmError.documentNum.required}}</span>
+                        <span ng-show="form.pensionNumber.$error.pattern">{{vm.cmError.documentNum.invalid}}</span>
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>

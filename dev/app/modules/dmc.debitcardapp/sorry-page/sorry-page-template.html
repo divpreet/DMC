@@ -1,0 +1,29 @@
+<div class="dmc-sorry-page container">
+
+	<div class="dmc-sorry-page__content">
+		<h1 class="dmc-sorry-page__content__text-title
+				dmc-sorry-page__content__text-left brand-font">
+					<span class="dmc-sorry-page__content__text-title__text">
+						We are sorry
+					</span>
+		</h1>
+		<div class="dmc-sorry-page__content__panel panel panel-responsive">
+			<div class="dmc-sorry-page__content__panel__body panel-body
+				dmc-sorry-page__content__text-left row">
+				<div class="col-sm-10 col-sm-offset-1">
+					<div class="dmc-sorry-page__content__panel__body__lead-text">{{vm.errorMsg}}</div>
+					<div class="dmc-sorry-page__content__panel__body__normal-text">To continue, please:
+					<ul class="lists lists-neutral dmc-sorry-page__content__panel__body__list">
+						<li>Call us on <a href="tel:{{telephoneNumber}}" class="dmc-sorry-page__content__link">{{telephoneNumber}}</a></li>
+						<li><a href="{{branchLocatorLink}}" class="dmc-sorry-page__content__link">Find a branch near you</a></li>
+					</ul></div>
+				</div>
+			</div>
+		</div>
+
+		<!--<a class="btn btn-primary btn-lg dmc-confirmation-page__content__btn-homepage hide-mobile"
+		   href="{{homePageURL}}">Visit <span ng-bind-html="brandName"></span> homepage</a>
+		<a class="btn btn-primary btn-xl dmc-confirmation-page__content__btn-homepage show-mobile"
+		   href="{{homePageURL}}">Visit <span ng-bind-html="brandName"></span> homepage</a>-->
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<div class="dmc-footer">
+
+    <div class="dmc-footer__content container-fluid">
+
+        <span class="icon icon-size-md icon-padlock dmc-footer__content__padlock"></span>
+
+        <p class="dmc-footer__content__text body-font">
+            <span>{{:: cmLabels.copyrightLine1 | dmcTrustHtml}} <a href="{{securityInfoURL}}" target="_blank">{{cmLabels.securityLinkText}}</a>&#46;</span>
+            <br>
+            <span class="dmc-footer__content__text__small">
+                <span>&copy;2017</span>
+                <span ng-bind-html="cmLabels.brandName[brand.toLowerCase()] | dmcTrustHtml"></span>
+                <span ng-bind-html="cmLabels.copyrightLine2 | dmcTrustHtml"></span>
+                <br class="hide-mobile">
+                <span ng-bind-html="cmLabels.copyrightLine3 | dmcTrustHtml"></span>
+            </span>
+        </p>
+
+    </div>
+
+</div>

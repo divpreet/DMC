@@ -1,0 +1,61 @@
+<div class="dmc-confirmation-page container">
+
+	<div class="dmc-confirmation-page__content">
+		<h1 class="dmc-confirmation-page__content__text-title text-left brand-font">
+			<span class="icon icon-size-lg icon-face-happy hide-mobile"></span>
+			<span class="dmc-confirmation-page__content__page-head">All done! Your debit card is on its way</span>
+		</h1>
+
+		<div class="dmc-confirmation-page__content__panel panel panel-responsive">
+			<div class="dmc-confirmation-page__content__panel__body panel-body row">
+				<div class="col-sm-10 col-sm-offset-1">
+					<div class="dmc-confirmation-page__content__panel__text-row row">
+						<div class="col-sm-6">
+							<div class="icon icon-size-md icon-message col-xs-2
+						dmc-confirmation-page__content__panel__steps-text__icon"></div>
+							<div class="col-xs-10 dmc-confirmation-page__content__panel__steps-text">
+								We've sent a confirmation email with terms and conditions to <strong>{{vm.customer.userEmail}}</strong>.
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="icon icon-size-md icon-credit-card col-xs-2
+						dmc-confirmation-page__content__panel__steps-text__icon"></div>
+							<div class="col-xs-10 dmc-confirmation-page__content__panel__steps-text">
+								Your Business Visa Debit Card will be delivered to <strong>{{vm.customer.address}}</strong> in 3-5 working days.
+							</div>
+						</div>
+					</div>
+					<div class="dmc-confirmation-page__content__panel__text-row row">
+						<div class="col-sm-6">
+							<div class="icon icon-size-md icon-email col-xs-2
+						dmc-confirmation-page__content__panel__steps-text__icon"></div>
+							<div class="col-xs-10">
+								Your PIN and instructions on how to activate your debit card will
+								arrive in a separate letter a few days later.
+							</div>
+						</div>
+					</div>
+					<h3 class="dmc-confirmation-page__content__panel__steps brand-font">Need help?</h3>
+					<div class="dmc-confirmation-page__content__panel__text-row row">
+						<div class="col-sm-12 hide-mobile">
+							<div class="icon icon-size-md icon-telephone col-sm-2
+						dmc-confirmation-page__content__panel__steps-text__icon"></div>
+							<div class="col-sm-10 dmc-confirmation-page__content__info-line">
+								If you have any questions, please contact us on <strong>{{telephoneNumber}}</strong>.
+							</div>
+						</div>
+						<div class="col-xs-12 body-font show-mobile">
+							<div class="dmc-confirmation-page__content__mobile__line">If you have any questions, please contact us.</div>
+							<div><a href="tel:{{telephoneNumber}}" class="btn btn-faint btn-lg dmc-confirmation-page__content__mobile__btn">Call us on {{telephoneNumber}}</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<a class="btn btn-primary btn-lg dmc-confirmation-page__content__btn-homepage hide-mobile"
+		   href="{{homePageURL}}">Visit <span ng-bind-html="brandName"></span> homepage</a>
+		<a class="btn btn-primary btn-xl dmc-confirmation-page__content__btn-homepage show-mobile"
+		   href="{{homePageURL}}">Visit <span ng-bind-html="brandName"></span> homepage</a>
+	</div>
+</div>

@@ -1,0 +1,4 @@
+describe('dmc.common', function() {
+	
+
+});

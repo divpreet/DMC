@@ -1,0 +1,212 @@
+@import (reference) '../../dmc.app/variables/index.less';
+
+.dmc-confirm-order {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -70px;
+
+  &__content {
+    width: 100%;
+    &__mute-text {
+      color: @color-C;
+    }
+    &__text-title {
+      color: @color-F;
+    }
+    &__panel {
+      border-color: @color-H;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      &__body {
+        margin-top: 18px;
+        margin-bottom: 18px;
+      }
+      &__loading{
+        margin: 18px 0;
+        &__main-text{
+          font-size: 20px;
+          font-weight: 300;
+          padding-bottom: 12px;
+        }
+        &__general-text{
+          font-size: 18px;
+          font-weight: 300;
+        }
+      }
+      &__text-row {
+        &__text-value{
+          font-size: 16px;
+          font-weight: 300;
+        }
+      }
+      &__well {
+        padding: 12px !important;
+        margin-bottom: 30px;
+        border: 0;
+        &__text-row {
+          text-align: left !important;
+          padding: 12px 0;
+          &__text-head{
+            font-weight: 300;
+          }
+          &__text-value{
+            font-weight: 500;
+          }
+        }
+      }
+      &__alert {
+        color: @color-F !important;
+        padding: 24px 12px;
+      }
+      &__text-row {
+        margin: 18px -6px;
+      }
+      &__helptext {
+        color: @color-A
+      }
+      &__lists{
+        font-weight: 300;
+      }
+    }
+    &__actions {
+      margin: 30px 0;
+      &__btn {
+        margin: 10px;
+        &__cancel {
+          float: left !important;
+        }
+        &__approve {
+          float: right !important;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    &__content{
+      padding: 94px 0 60px 0;
+      &__text-title{
+        margin-bottom: 12px !important;
+      }
+      &__text-help{
+        font-size: 18px;
+        font-weight: 300;
+      }
+      &__panel{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        &__text-row {
+          &__text-head{
+            text-align: right;
+          }
+        }
+        &__well {
+          &__text-row {
+            &__text-head{
+              text-align: right;
+              font-size: 16px;
+            }
+            &__text-value{
+              font-size: 18px;
+            }
+          }
+        }
+        &__alert {
+          margin-top: 42px;
+          margin-bottom: 42px;
+        }
+        &__lists{
+          font-size: 16px;
+          margin: -4px 0;
+        }
+        &__loading{
+          &__main-text{
+            padding-top: 30px;
+          }
+        }
+      }
+      &__info-line{
+        color: @color-C;
+        margin-top: -12px;
+      }
+      &__loader{
+        margin-top: -12px;
+      }
+    }
+    .show-mobile {
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    &__content{
+      padding: 70px 0 30px 0;
+      &__loader{
+        margin-top: 30px !important;
+        margin-bottom: 0 !important;
+      }
+      &__text-title {
+        margin-top: 30px !important;
+        margin-bottom: 12px;
+      }
+      &__text-help {
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 30px;
+      }
+      &__panel{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        &__text-row {
+          &__text-head{
+            text-align: left;
+            font-weight: 400;
+            font-size: 14px;
+          }
+          &__text-value{
+            text-align: left;
+            font-size: 16px;
+          }
+        }
+        &__well {
+          &__text-row {
+            &__text-head{
+              text-align: left;
+              font-size: 14px;
+            }
+            &__text-value{
+              font-size: 16px;
+            }
+          }
+        }
+        &__alert {
+          margin-top: 30px;
+          margin-bottom: 30px;
+        }
+      }
+      &__mobile{
+        &__line{
+          color: @color-C;
+        }
+        &__btn {
+          width: 100%;
+        }
+      }
+      &__actions {
+        &__btn {
+          &__cancel {
+            width: 100%;
+          }
+          &__approve {
+            width: 100%;
+            margin-bottom: 12px;
+          }
+        }
+      }
+    }
+    .hide-mobile {
+      display: none;
+    }
+  }
+}

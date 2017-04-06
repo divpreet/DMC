@@ -1,0 +1,64 @@
+@import (reference) '../../dmc.app/variables/index.less';
+@header-height: 70px;
+@header-padding: 15px;
+@media only screen and (max-width: 767px) {
+    @header-height: 60px;
+}
+.dmc-header {
+    text-align: left;
+    background-color: #fff;
+    border-bottom: 1px solid @color-H;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+    height: @header-height;
+    @media only screen and (min-width: 360px) {
+        padding: 0 @header-padding;
+    }
+    .visibilityHidden {
+        visibility: hidden;
+    }
+    & .disabled {
+        pointer-events: none;
+        opacity: 0.4;
+    }
+    &__logo {
+        vertical-align: top;
+    }
+    &__contact-us {
+        float: right;
+        text-align: center;
+        padding: @header-padding 0;
+        text-decoration: none;
+        &__text {
+            display: inline-block;
+            text-align: left;
+            &__label {
+                color: @color-F;
+            }
+            &__number {
+                color: @color-A;
+            }
+        }
+    }
+    &__contact-us:hover{
+        text-decoration: none;
+    }
+    @media only screen and (min-width: 768px) {
+        &__logo {
+            margin-left: 25px;
+        }
+        &__contact-us {
+            margin-right: 25px;
+        }
+        .show-mobile {
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        &__logo {
+            margin-top: 7px;
+        }
+        .hide-mobile {
+            display: none;
+        }
+    }
+}

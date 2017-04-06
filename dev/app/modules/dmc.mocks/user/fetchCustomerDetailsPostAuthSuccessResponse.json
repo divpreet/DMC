@@ -1,0 +1,14 @@
+{
+    "status": "Success",
+    "customerDetails": {
+        "customerName": "Westpac",
+        "accountHolderName": "Westpac Inc",
+        "accountType": "Business Freedom Account",
+        "accountOpenDate": "01/01/2017",
+        "mobileNumber": "61*******98",
+        "bsb": "123-456",
+        "accountNumber": "12345678",
+        "businessName": "Westpac Inc",
+        "deliveryAddress": "10 Crown St. REDFERN NSW 2000"
+    }
+}

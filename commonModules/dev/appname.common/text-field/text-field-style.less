@@ -1,0 +1,36 @@
+@import (reference) '../../appname.app/variables/index.less';
+.appname-text-field {
+    .alert-form {
+        margin-bottom: 0;
+    }
+    &__label {
+        .appname-label();
+        &__mandatory {
+            .mandatory();
+        }
+        &__left {
+          text-align: right;
+          margin-top: 4px;
+        }
+    }
+    &__locked-icon {
+        display: inline-block;
+        float: right;
+        margin-top: 3px;
+    }
+    .input-group {
+        .input-group-input {
+            width: calc(100% ~"-" 36px);
+        }
+        .full-width {
+            width: 100%;
+        }
+        .input-group-addon{
+          width: 36px;
+          text-align: center;
+        }
+    }
+    .label-top {
+      width: 100%;
+    }
+}

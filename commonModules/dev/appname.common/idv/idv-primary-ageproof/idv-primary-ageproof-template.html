@@ -1,0 +1,73 @@
+<div class="appname-idv-primary-ageproof">
+
+    <div class="well well-responsive clearfix top-margin3-xs top-margin3-sm">
+        <h5>Card issued by a State or Territory (or equivalent). Must be current and include the
+            customer' signature and photograph.</h5>
+        <div class="col-sm-9 top-margin3-sm">
+
+            <div class="form-group form-radio"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.ageProofRadio.$dirty) && form.ageProofRadio.$invalid}">
+
+                <label class="col-sm-4 text-right">Original or Certified Copy</label>
+                <div class="form-group col-sm-6 clearfix">
+                    <label class="radio">
+                        <input class="radio-input" type="radio" id="ageProofRadio1" name="ageProofRadio"
+                               ng-model="vm.idv.ageproof.radio" value="yes" ng-required="true">
+                        <span class="radio-text">Yes—Original</span>
+                    </label>
+                    <label class="radio">
+                        <input class="radio-input" type="radio" id="ageProofRadio2" name="ageProofRadio"
+                               value="no"
+                               ng-model="vm.idv.ageproof.radio" ng-required="true">
+                        <span class="radio-text">No—Certified copy</span>
+                    </label>
+                    <p ng-show="(form.$submitted || form.ageProofRadio.$dirty) && form.ageProofRadio.$invalid"
+                       class="alert-form-msg">
+                        <span ng-show="form.ageProofRadio.$error.required">{{vm.cmError.idvdoc.required}}</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group appname-idv-primary-aulicence alert-form clearfix"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.ageProofState.$touched) && form.ageProofState.$invalid}">
+                <label for="ageProofState" class="col-sm-4 text-right">State of issue</label>
+                <div class="col-sm-6">
+                    <div class="input-field-select-wrapper">
+                        <select id="ageProofState" class="input-field-select" name="ageProofState"
+                                ng-model="vm.idv.ageproof.state"
+                                ng-options="k.id as k.name for k in vm.stateList" ng-required="true">
+                            <option value="">Please Select</option>
+                        </select>
+                    </div>
+                    <p ng-show="(form.$submitted || form.ageProofState.$touched) && form.ageProofState.$invalid"
+                       class="alert-form-msg">{{vm.cmError.issuerCountry.required}}</p>
+                </div>
+
+            </div>
+
+            <div class="form-group appname-idv-primary-aulicence alert-form clearfix"
+                 ng-class="{'alert-form has-danger': (form.$submitted || form.ageProofNumber.$touched) && form.ageProofNumber.$invalid}">
+                <label for="ageProofNumber" class="col-sm-4 text-right">Document number</label>
+                <div class="col-sm-6">
+                    <input type="text" class="input-field" name="ageProofNumber" id="ageProofNumber"
+                           ng-model="vm.idv.ageproof.number" ng-required="true" ng-pattern="/^[a-z0-9]*$/i">
+                    <p ng-show="(form.$submitted || form.ageProofNumber.$touched) && form.ageProofNumber.$invalid"
+                       class="alert-form-msg">
+                        <span ng-show="form.ageProofNumber.$error.required">{{vm.cmError.documentNum.required}}</span>
+                        <span ng-show="form.ageProofNumber.$error.pattern">{{vm.cmError.documentNum.invalid}}</span>
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-sm-3 hidden-xs">
+            <img ng-src="{{vm.imageUrls.photocard}}" class="max-width top-margin2-xs ">
+        </div>
+
+
+    </div>
+
+</div>

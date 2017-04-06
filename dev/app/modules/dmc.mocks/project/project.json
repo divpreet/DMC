@@ -1,0 +1,107 @@
+[{
+  "Branch Wow Components": [{
+    "name": "IDV",
+    "description": "Capturing identification details.",
+    "preview": "http://10.148.44.60/core_images/branchwow/idv.jpg"
+  }, {
+    "name": "Date input",
+    "description": "Dropdown combination for day, month, year with all validated. Used for DOB, issue and expiry dates.",
+    "preview": "http://10.148.44.60/core_images/branchwow/dateinput.png"
+  }, {
+    "name": "Create Customer",
+    "description": "Vertical form with multiple inputs",
+    "preview": "http://10.148.44.60/core_images/branchwow/createcustomer.jpg"
+  }, {
+    "name": "Search",
+    "description": "Search customer based on name/email/identifier",
+    "preview": "http://10.148.44.60/core_images/branchwow/search.jpg"
+  }, {
+    "name": "QAS component",
+    "description": "Predictive address list as a user type to input field",
+    "preview": "http://10.148.44.60/core_images/branchwow/qascomponent.png"
+  }]
+}, {
+  "HLTP components": [{
+    "name": "Sortable table acordion",
+    "description": "A table which can display data from a list of records with in-built features of sorting and pagination. Driven by reference data.",
+    "preview": "http://10.148.44.60/core_images/hltp/sortabletableaccordion.png"
+  }, {
+    "name": "Validate",
+    "description": "A directive which is intented to handle the day-to-day validation on different input fields with flexibility of validation on the fly and on blur. Multiple types of validation like required, maxLength, maxValue, requiredLength, formattingOnBlur, convert the value to float on the fly and on blur, additional business validation on blur and on change.",
+    "preview": "http://10.148.44.60/core_images/hltp/validate1.png"
+  }, {
+    "name": "Popup warning",
+    "description": "A generic modal used to display a warning in the application. Title, content and footer actions can be sent as parameters.",
+    "preview": "http://10.148.44.60/core_images/hltp/popupwarning.png"
+  }, {
+    "name": "Form change",
+    "description": "A generic directive to be declared on form to trigger and event on form change.",
+    "preview": "http://10.148.44.60/core_images/noimage.png"
+  }, {
+    "name": "Card (home loan)",
+    "description": "A medium sized home loan card with basic information.",
+    "preview": "http://10.148.44.60/core_images/hltp/homeloancard.png"
+  }, {
+    "name": "Customer Search",
+    "description": "UI-tab for searching for a customer based on few identifiers and demographics.",
+    "preview": "http://10.148.44.60/core_images/hltp/customersearch.png"
+  }, {
+    "name": "Review card",
+    "description": "A large sized homeLoan card with repricing information.",
+    "preview": "http://10.148.44.60/core_images/hltp/reviewcard.png"
+  }, {
+    "name": "Filters",
+    "description": "Generic filters like date parser, adding a particular field in a list, auto detection of localhost to pick mock data etc.",
+    "preview": "http://10.148.44.60/core_images/noimage.png"
+  }]
+}, {
+  "Sol+/Ce+ Components": [{
+    "name": "Maintain customer screen",
+    "description": "Modified panel from bootstrap and GEL. Have an edit or delete button.",
+    "preview": "http://10.148.44.60/core_images/solce/maintaincustomer.png"
+  }, {
+    "name": "IDV documents",
+    "description": "Modified panel from bootstrap and GEL. Have an edit or delete button.",
+    "preview": "http://10.148.44.60/core_images/solce/idvdoc.png"
+  }, {
+    "name": "IDV",
+    "description": "Modified panel from bootstrap and GEL. Have an edit or delete button.",
+    "preview": "http://10.148.44.60/core_images/solce/idvsol.png"
+  }, {
+    "name": "Tiles for multi-selection",
+    "description": "Used for giving an option to choose multiple options together and displaying extra information about the selection.",
+    "preview": "http://10.148.44.60/core_images/solce/tiles.png"
+  }, {
+    "name": "Decision tree",
+    "description": "Non-UI set of utility functions used to move back and forth in a set of pages and to help in decision based page flows.",
+    "preview": "http://10.148.44.60/core_images/noimage.png"
+  }, {
+    "name": "Combobox",
+    "description": "Searchable dropdown, which supports a dropdown feature as well as a suggestive search feature.",
+    "preview": "http://10.148.44.60/core_images/solce/combobox.png"
+  }, {
+    "name": "QAS",
+    "description": "3rd party suggestive address service",
+    "preview": "http://10.148.44.60/core_images/solce/qassol.png"
+  }, {
+    "name": "Fuzzy Search",
+    "description": "Typeahead for suggestive searches",
+    "preview": "http://10.148.44.60/core_images/solce/fuzzy.png"
+  }, {
+    "name": "List of inputs",
+    "description": "Vertical form with multiple inputs",
+    "preview": "http://10.148.44.60/core_images/solce/inputlist.png"
+  }, {
+    "name": "Date helper",
+    "description": "Non-UI utlity that provides methods for date manipulations/date comparisons. Also provides a few fixes for browser compatibilities of date pickers.",
+    "preview": "http://10.148.44.60/core_images/noimage.png"
+  }, {
+    "name": "Validators",
+    "description": "Non-UI utlity that is acentralized place for keeping all regular expressions which can be reused throughout the application and can be easily maintainable.",
+    "preview": "http://10.148.44.60/core_images/noimage.png"
+  }, {
+    "name": "User factory",
+    "description": "Non-UI utility that is a redefined factory used for ARC user login/user roles related functionality.",
+    "preview": "http://10.148.44.60/core_images/noimage.png"
+  }]
+}]

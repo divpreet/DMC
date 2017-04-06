@@ -1,0 +1,84 @@
+<div class="dmc-confirm-order container">
+
+	<div class="dmc-confirm-order__content" ng-if="!vm.isLoading">
+		<h1 class="dmc-confirm-order__content__text-title text-left brand-font">Confirm your details</h1>
+		<div class="dmc-confirm-order__content__text-help text-left body-font">Please make sure all your details are correct before you continue.</div>
+		<div class="dmc-confirm-order__content__panel panel panel-responsive">
+			<div class="dmc-confirm-order__content__panel__body panel-body">
+				<div class="dmc-confirm-order__content__panel__well well well-responsive">
+					<div class="dmc-confirm-order__content__panel__well__text-row row">
+						<div class="col-sm-4 dmc-confirm-order__content__panel__well__text-row__text-head">You're ordering a:</div>
+						<div class="col-sm-8 dmc-confirm-order__content__panel__well__text-row__text-value">Business Visa Debit Card</div>
+					</div>
+				</div>
+				<div class="dmc-confirm-order__content__panel__text-row row">
+					<div class="col-sm-4 dmc-confirm-order__content__panel__text-row__text-head dmc-confirm-order__content__mute-text">Linked account</div>
+					<div class="col-sm-8 dmc-confirm-order__content__panel__text-row__text-value text-left">
+						<div>{{vm.customer.accountType}}</div>
+						<div>BSB: {{vm.customer.accountBsb}}</div>
+						<div>Account number: {{vm.customer.accountNumber}}</div>
+					</div>
+				</div>
+				<div class="dmc-confirm-order__content__panel__text-row row">
+					<div class="col-sm-4 dmc-confirm-order__content__panel__text-row__text-head dmc-confirm-order__content__mute-text">Account holder</div>
+					<div class="col-sm-8 dmc-confirm-order__content__panel__text-row__text-value text-left">{{vm.customer.accountHolderName}}</div>
+				</div>
+				<div class="dmc-confirm-order__content__panel__text-row row">
+					<div class="col-sm-4 dmc-confirm-order__content__panel__text-row__text-head dmc-confirm-order__content__mute-text">Account opened</div>
+					<div class="col-sm-8 dmc-confirm-order__content__panel__text-row__text-value text-left">{{vm.customer.accountOpenDate}}</div>
+				</div>
+				<div class="dmc-confirm-order__content__panel__text-row row">
+					<div class="col-sm-4 dmc-confirm-order__content__panel__text-row__text-head dmc-confirm-order__content__mute-text">Business name on debit card</div>
+					<div class="col-sm-8 dmc-confirm-order__content__panel__text-row__text-value text-left">{{vm.customer.nameOnCard}}</div>
+				</div>
+				<div class="dmc-confirm-order__content__panel__text-row row">
+					<div class="col-sm-4 dmc-confirm-order__content__panel__text-row__text-head dmc-confirm-order__content__mute-text">Card delivery address</div>
+					<div class="col-sm-8 dmc-confirm-order__content__panel__text-row__text-value text-left">{{vm.customer.address}}</div>
+				</div>
+
+				<div class="alert js-alert alert-success text-left dmc-confirm-order__content__panel__alert" role="alert">
+					<div class="col-sm-4 dmc-confirm-order__content__panel__text-row__text-head hide-mobile">
+						<div>By clicking on 'Order now',</div>
+						<div>you agree:</div>
+					</div>
+					<div class="col-sm-4 dmc-confirm-order__content__panel__text-row__text-head show-mobile">
+						<div>By clicking on 'Order now', you agree:</div>
+					</div>
+					<div class="col-sm-8 text-left">
+						<ul class="lists lists-tick dmc-confirm-order__content__panel__lists">
+							<li>to confirm that the information above is correct</li>
+							<li>to request a Business Visa Debit Card for your {{vm.customer.accountType}}</li>
+							<li>to the <a href="{{tcURL}}" target="_blank">Business Visa Debit Card Terms and Conditions (PDF, 208Kb)</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row body-font hide-mobile dmc-confirm-order__content__info-line">Please cancel if the above details are incorrect and contact us on {{telephoneNumber}}.</div>
+				<div class="row body-font show-mobile">
+					<div class="col-xs-12 dmc-confirm-order__content__mobile__line">Please cancel and call us if the above details are incorrect</div>
+					<div class="col-xs-12"><a href="tel:{{telephoneNumber}}" class="btn btn-faint btn-lg dmc-confirm-order__content__mobile__btn">Call us on {{telephoneNumber}}</a></div>
+				</div>
+			</div>
+		</div>
+
+		<button type="button" class="btn btn-primary btn-xl dmc-confirm-order__content__actions__btn__approve show-mobile"
+		        ng-click="vm.navigateToConfirmation()" ng-disabled="vm.disableProceed">Order now</button>
+		<button type="button" class="btn btn-primary btn-lg dmc-confirm-order__content__actions__btn__approve hide-mobile"
+		        ng-click="vm.navigateToConfirmation()" ng-disabled="vm.disableProceed">Order now</button>
+		<button type="button" class="btn btn-faint btn-lg dmc-confirm-order__content__actions__btn__cancel"
+		        ng-click="vm.cancelOrder()" data-modal="#cancelModal" aria-label="Cancel Card Order">Cancel</button>
+	</div>
+	<div class="dmc-confirm-order__content dmc-confirm-order__content__loader" ng-if="vm.isLoading">
+		<div class="dmc-confirm-order__content__panel panel panel-responsive">
+			<div class="dmc-confirm-order__content__panel__body dmc-confirm-order__content__panel__loading panel-body">
+				<div class="icon icon-size-lg icon-loading">
+				</div>
+				<div class="dmc-confirm-order__content__panel__loading__main-text body-font">Submitting card approval ....</div>
+				<div class="body-font dmc-confirm-order__content__mute-text
+				dmc-confirm-order__content__panel__loading__general-text">Please do not close your browser while your approval is being processed, this may take up to 1 minute.</div>
+			</div>
+		</div>
+	</div>
+
+	<dmc-modal show-modal="vm.cancelModal" modal-id="cancelFlow" modal-header="{{vm.cancelModalHeader}}" modal-body="{{vm.cancelModalBody}}"
+			confirm-flow="vm.cancelFlow()" cancel-label="Go back" proceed-label="Cancel order"></dmc-modal>
+</div>

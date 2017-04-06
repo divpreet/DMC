@@ -1,0 +1,54 @@
+<div class="appname-multi-input">
+    <label ng-if="vm.groupTitle.length" class="btn-group-title">{{ vm.groupTitle}}<span ng-if="vm.isRequired" class="appname-multi-input__mandatory">*</span></label>
+    <gui-tooltip ng-if="vm.isDisabled" position="{{vm.tooltipPosition}}" tooltip-title="{{vm.cmLockedFieldMsg}}" class="appname-multi-input__fieldset__icon">
+        <span class="icon icon-size-sm icon-padlock" data-grunticon-embed></span>
+    </gui-tooltip>
+    <div class="clearfix conditional-question">
+        <!--Alternate Name Radio button-->
+        <div class="row no-margin bottom-margin1-xs">
+            <div class="col-xs-6">
+                <label class="radio">
+                    <input class="radio-input" autocomplete="off" type="radio"
+                           ng-model="vm.selection" ng-click="vm.onYesClick()"
+                           value="Yes" ng-required="vm.isRequired">
+                    <span class="radio-text">{{vm.yesText}}</span>
+                </label>
+            </div>
+            <!-- /radio-custom -->
+
+            <div class="col-xs-6">
+                <label class="radio">
+                    <input class="radio-input" autocomplete="off" type="radio"
+                           ng-model="vm.selection"
+                           ng-click="vm.onNoClick()" value="No"
+                           ng-required="vm.isRequired">
+                    <span class="radio-text">{{vm.noText}}</span>
+                </label>
+            </div>
+            <!-- /radio-custom -->
+            <!--<mark>Required message
+            </mark>-->
+            <!-- /row -->
+        </div>
+        <!-- /no-margin -->
+
+        <div class="row no-margin conditional-response">
+            <div class="col-xs-12" ng-show="vm.selection == 'Yes'">
+                <div id="repeater" class="row form-group" ng-form="eachForm" >
+                    <div class="col-xs-11 appname-multi-input__new-row" id="transclude">
+                    </div>
+                    <div class="col-xs-1 appname-multi-input__remove">
+                        <a href="" class="icon icon-size-sm icon-cross" ng-click="vm.removeInput($index)" ng-show="vm.model.length > 1">
+                        </a>
+                    </div>
+                </div>
+                <div ng-show="vm.model.length < vm.maxInput">
+                    <button type="button" ng-click="vm.addInput()" class="btn btn-hero btn-sm">
+                        Add Another
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p ng-if="vm.errorMsg && vm.isInvalid" class="alert-form-msg">{{:: vm.errorMsg}}</p>
+</div>

@@ -1,0 +1,14 @@
+<div class="appname-text-field alert-form" ng-class="{'has-warning':vm.isInvalid === 'true'}">
+    <div class="appname-text-field__label-container">
+        <label for="{{vm.name}}" class="appname-text-field__label" ng-class="{'appname-text-field__label__left col-xs-12 col-md-3':vm.labelLeft === 'true'}">{{vm.label}}<span ng-if="vm.validateRequired === 'true'" class="appname-text-field__label__mandatory">*</span></label>
+        <gui-tooltip ng-if="vm.isDisabled === 'true'" position="{{vm.lockedTooltipPosition}}" class="appname-text-field__locked-icon" tooltip-title="{{vm.lockedTooltipMsg}}">
+            <span class="icon icon-size-sm icon-padlock" data-grunticon-embed></span>
+        </gui-tooltip>
+    </div>
+    <label ng-class="{'input-group': vm.type === 'input-group', 'col-xs-12 col-md-6' : vm.labelLeft === 'true', 'label-top' : vm.labelLeft !== 'true'}">
+        <span ng-if="vm.type === 'input-group'" class="input-group-text">{{vm.label}}</span>
+        <span ng-if="vm.type === 'input-group'" class="input-group-addon">{{vm.groupPrefix}}</span>
+        <input name="{{vm.name}}" type="text" ng-class="{'input-group-input': vm.type === 'input-group', 'full-width': vm.type !== 'input-group'}" class="input-field appname-text-field__input-field" ng-model="vm.model" ng-disabled="vm.isDisabled === 'true'" placeholder="{{vm.placeholderText}}" appname-validate validate-type="{{vm.validateType}}" validate-max-value="{{vm.validateMaxValue}}" validate-disable="{{vm.validateDisable}}" validate-pattern="{{vm.validatePattern}}" validate-maxlength="{{vm.validateMaxlength}}" validate-pattern-on-blur="{{vm.validatePatternOnBlur}}" apply-filter-on-blur="{{vm.applyFilterOnBlur}}" additional-business-validation="{{vm.additionalBusinessValidation}}" required-length="{{vm.requiredLength}}" validate-required="{{vm.validateRequired}}" regex-flags="{{vm.regexFlags}}" on-common-validate-change="{{vm.onCommonValidateChangeRequired}}" on-common-validate-blur="{{vm.onCommonValidateBlurRequired}}"></input>
+        <p class="alert-form-msg" ng-if="vm.isInvalid === 'true'">{{vm.errorMsg}}</p>
+    </label>
+</div>
